@@ -1,7 +1,8 @@
-const { day1: { values } } = require('../data')
+const fs = require('fs')
+const values = fs.readFileSync('./data/day1.txt').toString()
 
-const getElves = () => {
-  return values.split(' \n')
+const getElvesFromData = () => {
+  return values.split('\n\n')
 }
 
 const getMostCaloriesElf = (elves) => {
@@ -27,3 +28,5 @@ const getTopMostCalories = (elves, top) => {
 
   return topSum
 }
+
+module.exports = { getElvesFromData, getMostCaloriesElf, getTopMostCalories }
