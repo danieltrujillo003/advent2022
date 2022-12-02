@@ -1,8 +1,16 @@
 const { getElvesFromData, getMostCaloriesElf, getTopMostCalories } = require('./exercises/day1')
+const { getRoundsFromData, getFinalScoreWithChoices, getFinalScoreWithResults } = require('./exercises/day2')
 
 console.log('-> DAY 1')
 const mostCaloriesElf = getMostCaloriesElf(getElvesFromData())
 const TopThreeMostCalories = getTopMostCalories(getElvesFromData(), 3)
 console.log(`The elf with most calories is number ${mostCaloriesElf.index} wit a total of ${mostCaloriesElf.mostCalories} calories.`)
 console.log(`The total sum of the top three elves is ${TopThreeMostCalories} calories.`)
+console.log('------------------------------')
+
+console.log('-> DAY 2')
+const finalScoreWithChoices = getFinalScoreWithChoices(getRoundsFromData())
+const finalScoreWithResults = getFinalScoreWithResults(getRoundsFromData())
+console.log(`The final score assuming the second column is choice is ${finalScoreWithChoices}.`)
+console.log(`The final score assuming the second column is result is ${finalScoreWithResults}.`)
 console.log('------------------------------')
