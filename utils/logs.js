@@ -1,20 +1,20 @@
 import chalk from 'chalk'
-import { getRandom } from './misc.js'
+import { getRandomFrom } from './misc.js'
 const log = console.log
 
 const spheres = ['⨁', '◶', '✪', '◍', '⨂', '◉', '◎', '❂', '◐', '◑', '◒', '◓']
 const colors = ['redBright', 'greenBright', 'yellowBright', 'blueBright', 'magentaBright', 'cyanBright']
 
 export const divider = () => {
-  log(chalk[getRandom(colors)](getRandom(spheres)))
+  log(chalk[getRandomFrom(colors)](getRandomFrom(spheres)))
 }
 
 export const dayHeader = (dayNumber) => {
-  log(chalk[getRandom(colors)](getRandom(spheres)), chalk.redBright.bold(`-> DAY ${dayNumber}`))
+  log(chalk[getRandomFrom(colors)](getRandomFrom(spheres)), chalk.redBright.bold(`-> DAY ${dayNumber}`))
 }
 
 export const logAnswer = (text, value) => {
-  log(chalk[getRandom(colors)](getRandom(spheres)), chalk.greenBright(text), chalk.yellowBright(value))
+  log(chalk[getRandomFrom(colors)](getRandomFrom(spheres)), chalk.greenBright(text), chalk.yellowBright(value))
 }
 
 export const logError = (e) => {
