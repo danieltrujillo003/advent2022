@@ -1,4 +1,4 @@
-const fs = require('fs')
+import fs  from 'fs'
 const values = fs.readFileSync('./data/day2.txt').toString()
 
 const matchups = {
@@ -34,11 +34,11 @@ const resultPoints = {
   lose: 0
 }
 
-const getRoundsFromData = () => {
+export const getRoundsFromData = () => {
   return values.split('\n')
 }
 
-const getFinalScoreWithChoices = (rounds) => {
+export const getFinalScoreWithChoices = (rounds) => {
   const scoresArray = rounds.reduce((acc, round) => {
     const home = round[2]
     const away = round[0]
@@ -51,7 +51,7 @@ const getFinalScoreWithChoices = (rounds) => {
   return scoresArray.reduce((acc, score) => acc += score, 0)
 }
 
-const getFinalScoreWithResults = (rounds) => {
+export const getFinalScoreWithResults = (rounds) => {
   const scoresArray = rounds.reduce((acc, round) => {
     const away = round[0]
     const result = expectedResults[round[2]]
@@ -64,5 +64,3 @@ const getFinalScoreWithResults = (rounds) => {
 
   return scoresArray.reduce((acc, score) => acc += score, 0)
 }
-
-module.exports = { getRoundsFromData, getFinalScoreWithChoices, getFinalScoreWithResults }

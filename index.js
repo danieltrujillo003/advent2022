@@ -1,16 +1,17 @@
-const { getElvesFromData, getMostCaloriesElf, getTopMostCalories } = require('./exercises/day1')
-const { getRoundsFromData, getFinalScoreWithChoices, getFinalScoreWithResults } = require('./exercises/day2')
+import { getElvesFromData, getMostCaloriesElf, getTopMostCalories } from './exercises/day1.js'
+import { getRoundsFromData, getFinalScoreWithChoices, getFinalScoreWithResults } from './exercises/day2.js'
+import { divider, dayHeader, logAnswer } from './utils/logs.js'
 
-console.log('-> DAY 1')
+dayHeader(1)
 const mostCaloriesElf = getMostCaloriesElf(getElvesFromData())
 const TopThreeMostCalories = getTopMostCalories(getElvesFromData(), 3)
-console.log(`The elf with most calories is number ${mostCaloriesElf.index} wit a total of ${mostCaloriesElf.mostCalories} calories.`)
-console.log(`The total sum of the top three elves is ${TopThreeMostCalories} calories.`)
-console.log('------------------------------')
+logAnswer('The elf with most calories has', mostCaloriesElf.index)
+logAnswer('The total calories sum of the top three elves is', TopThreeMostCalories)
+divider()
 
-console.log('-> DAY 2')
+dayHeader(2)
 const finalScoreWithChoices = getFinalScoreWithChoices(getRoundsFromData())
 const finalScoreWithResults = getFinalScoreWithResults(getRoundsFromData())
-console.log(`The final score assuming the second column is choice is ${finalScoreWithChoices}.`)
-console.log(`The final score assuming the second column is result is ${finalScoreWithResults}.`)
-console.log('------------------------------')
+logAnswer('The final score assuming the second column is choice is', finalScoreWithChoices)
+logAnswer('The final score assuming the second column is result is', finalScoreWithResults)
+divider()

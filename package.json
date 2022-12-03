@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "List of snippet codes to solve https://adventofcode.com exercises",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.1.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "solve": "node index.js"
