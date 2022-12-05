@@ -2,6 +2,7 @@ import { getElvesFromData, getMostCaloriesElf, getTopMostCalories } from './exer
 import { getRoundsFromData, getFinalScoreWithChoices, getFinalScoreWithResults } from './exercises/day2.js'
 import { getRucksacksFromData, getTotalPriority, getBadgesPriority } from './exercises/day3.js'
 import { getPairsFromData, getTotalOverlapped, getTotalOrPatialOverlapped } from './exercises/day4.js'
+import { resolveSteps, getTopCrates } from './exercises/day5.js'
 import { divider, dayHeader, logAnswer } from './utils/logs.js'
 
 dayHeader(1)
@@ -30,4 +31,11 @@ const totalOverlapped = getTotalOverlapped(getPairsFromData())
 const totalOrPatialOverlapped = getTotalOrPatialOverlapped(getPairsFromData())
 logAnswer('The number of areas fully contained within the other is', totalOverlapped)
 logAnswer('The sum of areas tthat fully or partially overlap with their pairs are', totalOrPatialOverlapped)
+divider()
+
+dayHeader(5)
+const topCratesCrane9000 = getTopCrates(resolveSteps('9000'))
+const topCratesCrane9001 = getTopCrates(resolveSteps('9001'))
+logAnswer('The top crates if rearranged with the CrateMover 9000 are', topCratesCrane9000)
+logAnswer('The top crates if rearranged with the CrateMover 9001 are', topCratesCrane9001)
 divider()
