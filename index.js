@@ -4,6 +4,7 @@ import { getRucksacksFromData, getTotalPriority, getBadgesPriority } from './exe
 import { getPairsFromData, getTotalOverlapped, getTotalOrPatialOverlapped } from './exercises/day4.js'
 import { resolveSteps, getTopCrates } from './exercises/day5.js'
 import { getData, getMarker } from './exercises/day6.js'
+import { getTreesFromData, getVisibleTrees, getHighestScenicScore } from './exercises/day8.js'
 import { divider, dayHeader, logAnswer } from './utils/logs.js'
 
 dayHeader(1)
@@ -46,4 +47,15 @@ const packetMarker = getMarker(getData(), 4)
 const messageMarker = getMarker(getData(), 14)
 logAnswer('The packet marker after 4 different character is', packetMarker)
 logAnswer('The message marker after 14 different character is', messageMarker)
+divider()
+
+dayHeader(7)
+// TODO
+divider()
+
+dayHeader(8)
+const visibleTrees = getVisibleTrees(getTreesFromData())
+const highestScenicScore = getHighestScenicScore(getTreesFromData())
+logAnswer('The total number of visible trees is', visibleTrees)
+logAnswer('The highest scenic score of any tree is', highestScenicScore)
 divider()
