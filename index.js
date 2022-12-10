@@ -5,6 +5,7 @@ import { getPairsFromData, getTotalOverlapped, getTotalOrPatialOverlapped } from
 import { resolveSteps, getTopCrates } from './exercises/day5.js'
 import { getData, getMarker } from './exercises/day6.js'
 import { getTreesFromData, getVisibleTrees, getHighestScenicScore } from './exercises/day8.js'
+import { getInstructionsFromData, getSumOfStrengths, getCRTRender } from './exercises/day10.js'
 import { divider, dayHeader, logAnswer } from './utils/logs.js'
 
 dayHeader(1)
@@ -58,4 +59,15 @@ const visibleTrees = getVisibleTrees(getTreesFromData())
 const highestScenicScore = getHighestScenicScore(getTreesFromData())
 logAnswer('The total number of visible trees is', visibleTrees)
 logAnswer('The highest scenic score of any tree is', highestScenicScore)
+divider()
+
+dayHeader(9)
+// TODO
+divider()
+
+dayHeader(10)
+const sumOfStrengths = getSumOfStrengths(getInstructionsFromData())
+const CRTRender = getCRTRender(getSumOfStrengths(getInstructionsFromData(), true))
+logAnswer('The total sum of the signal strenghts is', sumOfStrengths)
+logAnswer('The CTR render using the signals, showing the secret 8 capital letters, is \n', CRTRender.slice(1))
 divider()
